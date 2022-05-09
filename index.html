@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Cập nhật tin tức nhanh nhất, mới nhất, chính xác nhất</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="img/logo_black.png" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+
+      <!-- MDB -->
+      <link rel="stylesheet" href="css/mdb.min.css" />
+    <style>
+      #carouselBasicExample,
+      .carousel-inner,
+      .carousel-item,
+      .carousel-item.active {
+        height: 100vh;
+      }
+      .carousel-item:nth-child(1) {
+        background-image: url("img/esport_background.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+      .carousel-item:nth-child(2) {
+        background-image: url("img/esport_background_2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+      .carousel-item:nth-child(3) {
+        background-image: url("img/esport_background_3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+      }
+
+      .navbar {
+        z-index: 100;
+      }
+
+      .hero-txt {
+        color: #fff;
+        text-align: center;
+      }
+      .hero-txt .hero-title {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 70px;
+        line-height: 85px;
+        font-weight: 400;
+        letter-spacing: 8px;
+        word-spacing: 4px;
+        margin-bottom: 15px;
+        margin-top: 0px;
+        padding: 20px 10px;
+      }
+      .hero-txt .hero-work {
+        font-weight: 300;
+        letter-spacing: 2px;
+        margin-bottom: 0;
+        margin-top: 300px;
+        color: white;
+        /* letter-spacing: 7px;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typewriter 4s steps(44) 1s 1 normal both,
+          blinkTextCursor 500ms infinite; */
+      }
+      .hero-txt .hero-work:after {
+        content: "";
+        display: block;
+        width: 200px;
+        height: 4px;
+        margin: 20px auto 0;
+        background-color: transparent;
+        border-width: 1px 0;
+        border-style: solid;
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      @keyframes typewriter {
+        from {
+          width: 0;
+        }
+        to {
+          width: 710px;
+        }
+      }
+      @keyframes blinkTextCursor {
+        from {
+          border-right-color: hsl(0, 0%, 80%);
+        }
+        to {
+          border-right-color: transparent;
+        }
+      }
+
+      p {
+        color: #444;
+      }
+
+      .modal-backdrop.fade.show{
+        display:none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header class="mb-5">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-black">
+          <!-- Container wrapper -->
+          <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="#">
+              <img src="img/logo.png" height="30" alt="" loading="lazy" />
+            </a>
+
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <!-- Left links -->
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="schedule.html">Schedule</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Watch</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="news_2.html">News</a>
+                </li>
+              </ul>
+              <!-- Left links -->
+
+              <!-- Search form -->
+              <form class="d-flex input-group w-auto">
+                <div class="input-group rounded">
+                  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                  <span class="input-group-text border-0" id="search-addon">
+                    <i class="fas fa-search"></i>
+                  </span>
+                </div>
+              </form>
+              <ul class="navbar-nav mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Login</a>
+                  <span id="dpl-auth-modal"><div class="modal fade show" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" aria-hiden="true" role="dialog">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content" style="margin-top: 250px;">
+                        <div class="modal-header text-center">
+                          <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body mx-3">
+                          <div class="row">
+                            <div class="col-md-1">
+                              <i class="fas fa-envelope prefix grey-text" style="margin-top: 5px; font-size: 25px;"></i>
+                            </div>
+                            <div class="col-md">
+                              <div class="form-outline mb-4">
+                                <input type="email" id="form1Example1" class="form-control" />
+                                <label class="form-label" for="form1Example1">Email address</label>
+                                <div class="invalid-feedback">Please provide a valid email.</div>
+                              </div>
+                            </div>
+                          </div>
+        
+                          <div class="row">
+                            <div class="col-md-1">
+                              <i class="fas fa-lock prefix grey-text" style="margin-top: 6px; font-size: 25px;"></i>
+                            </div>
+                            <div class="col-md">
+                              <div class="form-outline mb-4">
+                                <input type="password" id="form1Example2" class="form-control" />
+                                <label class="form-label" for="form1Example2">Password</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Sign in</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div></span>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
+                    aria-expanded="false">
+                    <img src="img/admin.png" class="rounded-circle img-fluid"
+                      height='25' width='25'>
+                  </a>
+                  <!-- Dropdown menu -->
+                  <ul class="dropdown-menu dropdown-menu-end p-1" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                    <li><a class="dropdown-item" href="#">Log Out</a></li>
+                  </ul>
+                </li>
+              </ul>
+
+            </div>
+            <!-- Collapsible wrapper -->
+          </div>
+          <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+
+        <!-- Carousel wrapper -->
+        <div id="carouselBasicExample" class="carousel slide carousel-fade shadow-5-strong" data-mdb-ride="carousel">
+          <!-- Indicators -->
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-mdb-target="#carouselBasicExample"
+              data-mdb-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-mdb-target="#carouselBasicExample"
+              data-mdb-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-mdb-target="#carouselBasicExample"
+              data-mdb-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+        
+          <!-- Inner -->
+          <div class="carousel-inner">
+            <!-- Single item -->
+            <div class="carousel-item active">
+              <div class="hero-txt">
+                <p class="hero-work">Nhanh nhất - Mới nhất - Chính xác nhất</p>
+                <h2 class="hero-title">Esport.gg</h2>
+                <a href="#lastest">
+                  <button
+                type="button"
+                class="btn btn-outline-light"
+                data-mdb-ripple-color="light">
+                  Explore
+              </button>
+                </a>
+              </div>
+            </div>
+        
+            <!-- Single item -->
+            <div class="carousel-item">
+              <div class="hero-txt">
+                <p class="hero-work">Nhanh nhất - Mới nhất - Chính xác nhất</p>
+                <h2 class="hero-title">Esport.gg</h2>
+                <a href="#lastest">
+                  <button
+                type="button"
+                class="btn btn-outline-light"
+                data-mdb-ripple-color="light">
+                  Explore
+              </button>
+              </div>
+            </div>
+        
+            <!-- Single item -->
+            <div class="carousel-item">
+              <div class="hero-txt">
+                <p class="hero-work">Nhanh nhất - Mới nhất - Chính xác nhất</p>
+                <h2 class="hero-title">Esport.gg</h2>
+                <a href="#lastest">
+                  <button
+                type="button"
+                class="btn btn-outline-light"
+                data-mdb-ripple-color="light">
+                  Explore
+              </button>
+              </div>
+            </div>
+          </div>
+          <!-- Inner -->
+        </div>
+        <!-- Carousel wrapper -->
+    </header>
+
+    <main class="mb-5">
+      <div class="container">
+        <h2 class="mb-5 text-center" style="color: #444;">Lastest Features</h2>
+        <!--Section: Posts-->
+        <section class="text-center mb-4 my-4" id="posts">
+          <div class="row my-4">
+            <div class="col-md-4">
+              <div class="card">
+                <!-- Card image -->
+                <div class="bg-image hover-overlay ripple shadow-1-strong rounded mb-4" data-mdb-ripple-color="light">
+                  <img
+                    data-mdb-lazy-src="https://images.contentstack.io/v3/assets/bltb730eada072bdbf4/blt0c5fc4c82d98e5c7/6267fcb0b442146752e03370/Untitled_design_(4).jpg?width=720&height=405"
+                    data-mdb-lazy-placeholder="https://static.vecteezy.com/system/resources/previews/000/344/660/large_2x/vector-blue-gradient-loading-bar-for-web-interfaces-template-flat-button.jpg"
+                    class="w-100 lazy"
+                  />
+                  <a href="single.html">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                  </a>
+                </div>
+                <!-- Card content -->
+                <div class="card-body text-center">
+                  <!-- Title -->
+                  <h4 class="card-title">VCT Masters Stage 1: OpTiC Gaming emerge victorious in the most insane tournament yet</h4>
+                  <!-- Text -->
+                  <p class="card-text">
+                    It’s safe to say that 2022’s Masters Reykjavik was one of the craziest VALORANT tournaments that we’ve seen to date ...
+                  </p>
+                  <a class="btn btn-info btn-rounded mb-0" href="#!" role="button">Read more</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <!-- Card image -->
+                <div class="bg-image hover-overlay ripple shadow-1-strong rounded mb-4" data-mdb-ripple-color="light">
+                  <img
+                    data-mdb-lazy-src="https://images.contentstack.io/v3/assets/bltb730eada072bdbf4/blt8f7de55c65799e28/6266b68a32b456624c6e2f6a/GC_AnnouncementS2_v5.jpg?width=720&height=405"
+                    data-mdb-lazy-placeholder="https://static.vecteezy.com/system/resources/previews/000/344/660/large_2x/vector-blue-gradient-loading-bar-for-web-interfaces-template-flat-button.jpg"
+                    class="w-100 lazy"
+                  />
+                  <a href="single.html">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                  </a>
+                </div>
+                <!-- Card content -->
+                <div class="card-body text-center">
+                  <!-- Title -->
+                  <h4 class="card-title">VCT Game Changers EMEA Series #2</h4>
+                  <!-- Text -->
+                  <p class="card-text">
+                    Everything you need to know about VALORANT’s premier women’s tournament ...
+                  </p>
+                  <a class="btn btn-info btn-rounded mb-0" href="#!" role="button">Read more</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <!-- Card image -->
+                <div class="bg-image hover-overlay ripple shadow-1-strong rounded mb-4" data-mdb-ripple-color="light">
+                  <img
+                    data-mdb-lazy-src="https://images.contentstack.io/v3/assets/bltb730eada072bdbf4/blt7bca89da2cd1d44a/626a4f059c6487661a0424ba/BACK_UP_VCT_Athena_Social_Graphic_16x9.jpg?width=720&height=405"
+                    data-mdb-lazy-placeholder="https://static.vecteezy.com/system/resources/previews/000/344/660/large_2x/vector-blue-gradient-loading-bar-for-web-interfaces-template-flat-button.jpg"
+                    class="w-100 lazy"
+                  />
+                  <a href="single.html">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                  </a>
+                </div>
+                <!-- Card content -->
+                <div class="card-body text-center">
+                  <!-- Title -->
+                  <h4 class="card-title">The Future of Competitive VALORANT</h4>
+                  <!-- Text -->
+                  <p class="card-text">
+                    Thanks to our players and fans, VALORANT is today's fastest growing esport. Between the nail-biter overtimes, ...
+                  </p>
+                  <a class="btn btn-info btn-rounded mb-0" href="#!" role="button">Read more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--Section: Posts-->
+        
+        <hr class="my-5" />
+
+        <div class="row">
+          <div class="col-md">
+            <h2 class="mb-5 text-center" style="color: #444;">News <a href="news_2.html"><i class="fas fa-chevron-circle-right" style="font-size: 20px;"></i></a></h2>
+            
+            <!-- Tabs navs -->
+            <ul class="nav nav-tabs mb-4" id="ex2" role="tablist" style="margin-top: -30px;">
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link active"
+                  id="ex2-tab-1"
+                  data-mdb-toggle="tab"
+                  href="#ex2-tabs-1"
+                  role="tab"
+                  aria-controls="ex2-tabs-1"
+                  aria-selected="true"
+                  >League of Legends</a
+                >
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link"
+                  id="ex2-tab-2"
+                  data-mdb-toggle="tab"
+                  href="#ex2-tabs-2"
+                  role="tab"
+                  aria-controls="ex2-tabs-2"
+                  aria-selected="false"
+                  >Valorant</a
+                >
+              </li>
+            </ul>
+            <!-- Tabs navs -->
+
+            <!-- Tabs content -->
+            <div class="tab-content" id="ex2-content">
+              <div
+                class="tab-pane fade show active"
+                id="ex2-tabs-1"
+                role="tabpanel"
+                aria-labelledby="ex2-tab-1"
+              >
+                <!--Section: Posts-->
+                <section class="mb-0" id="posts">
+                  <div class="card mb-4">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                          <img
+                            data-mdb-lazy-src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt8dfa69a821227257/6271f3af2bec9b34ea68adc1/050622_Quick_Gameplay_Thoughts_Banner.jpg"
+                            data-mdb-lazy-placeholder="https://static.vecteezy.com/system/resources/previews/000/344/660/large_2x/vector-blue-gradient-loading-bar-for-web-interfaces-template-flat-button.jpg"
+                            class="w-100 lazy"
+                          />
+                          <a href="single.html">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                          </a>
+                        </div>
+                      </div>
+  
+                      <div class="col-md-8">
+                        <h5>Quick Gameplay Thoughts: 5/6</h5>
+                        <p>
+                          A look into what you can expect with the Champion Durability Update in patch 12.10!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <div class="card mb-4">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                          <img
+                            data-mdb-lazy-src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt424af1a5ad8d6928/6271e87679aed9366937ee71/050622_Challenges_Launch_Banner.jpg"
+                            data-mdb-lazy-placeholder="https://static.vecteezy.com/system/resources/previews/000/344/660/large_2x/vector-blue-gradient-loading-bar-for-web-interfaces-template-flat-button.jpg"
+                            class="w-100 lazy"
+                          />
+                          <a href="single.html">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                          </a>
+                        </div>
+                      </div>
+  
+                      <div class="col-md-8">
+                        <h5>Challenges Walkthrough</h5>
+                        <p>
+                          Build your League legacy by ranking up across more than 300 Challenges!.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <!--Section: Posts-->
+              </div>
+              <div class="tab-pane fade" id="ex2-tabs-2" role="tabpanel" aria-labelledby="ex2-tab-2">
+                <!--Section: Posts-->
+                <section class="mb-0" id="posts">
+                  <div class="card mb-4">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                          <img
+                            data-mdb-lazy-src="https://images.contentstack.io/v3/assets/bltb730eada072bdbf4/blt538b38ff13f3426d/62553d498159d551ca3b48e8/Untitled_design_(3).jpg?width=922&height="
+                            data-mdb-lazy-placeholder="https://static.vecteezy.com/system/resources/previews/000/344/660/large_2x/vector-blue-gradient-loading-bar-for-web-interfaces-template-flat-button.jpg"
+                            class="w-100 lazy d-flex align-items-center justify-content-center"
+                          />
+                          <a href="single.html">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                          </a>
+                        </div>
+                      </div>
+  
+                      <div class="col-md-8">
+                        <h5>VALORANT Challengers Promotion Tournament EMAEA: Dach dominance as big & fokus progress</h5>
+                        <p>
+                          As VCT Stage 1 Challengers is confined to the annals of history, new VALORANT champions have emerged from VALORANT Challengers Promotion Tournament with their eyes set on the VCT Stage 2 Challengers prize.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                
+                  <div class="card mb-4">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-mdb-ripple-color="light">
+                          <img
+                            data-mdb-lazy-src="https://images.contentstack.io/v3/assets/bltb730eada072bdbf4/blt4cefbaed4e2a7d90/624aa0347d552701c6365e24/04_05_22_Getty_Partner_Banner.png?width=519&height="
+                            data-mdb-lazy-placeholder="https://static.vecteezy.com/system/resources/previews/000/344/660/large_2x/vector-blue-gradient-loading-bar-for-web-interfaces-template-flat-button.jpg"
+                            class="w-100 lazy w-100 lazy d-flex align-items-center justify-content-center"
+                          />
+                          <a href="single.html">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                          </a>
+                        </div>
+                      </div>
+  
+                      <div class="col-md-8">
+                        <h5>Introducing the first global Esport event photography gallery</h5>
+                        <p>
+                          Esports at Riot Games has built up quite a history. It has been nearly twelve years since the first League of Legends World Championship event took place in 2011..
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+                <!--Section: Posts-->
+              </div>
+            </div>
+            <!-- Tabs content -->
+          </div>
+          
+          <div class="col-md-3">
+            <h2 class="mb-5 text-center" style="color: #444;">VODS</h2>
+            <ul class="nav nav-tabs mb-4" id="ex3" role="tablist" style="margin-top: -30px;">
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link active"
+                  id="ex3-tab-1"
+                  data-mdb-toggle="tab"
+                  href="#ex3-tabs-1"
+                  role="tab"
+                  aria-controls="ex3-tabs-1"
+                  aria-selected="true"
+                  >Lol</a
+                >
+              </li>
+              <li class="nav-item" role="presentation">
+                <a
+                  class="nav-link"
+                  id="ex3-tab-2"
+                  data-mdb-toggle="tab"
+                  href="#ex3-tabs-2"
+                  role="tab"
+                  aria-controls="ex3-tabs-2"
+                  aria-selected="false"
+                  >Val</a
+                >
+              </li>
+            </ul>
+
+            <div class="tab-content" id="ex3-content">
+              <div
+                class="tab-pane fade show active"
+                id="ex3-tabs-1"
+                role="tabpanel"
+                aria-labelledby="ex3-tab-1"
+              >
+                <section class="text-center mb-2" id="vods-lol">
+                  <div class="card text-center" style="padding: 10px 10px 10px 10px;">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                          <img src="https://am-a.akamaihd.net/image?resize=140:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1631819523085_t1-2021-worlds.png" class="img-fluid" style="max-width: 40px; max-height: 40px;"/>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-4">
+                          <h5 style="margin-top: 5px;" class="text-center">vs</h5>
+                      </div>
+        
+                      <div class="col-md-3">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                          <img src="https://am-a.akamaihd.net/image?resize=140:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1636524131703_900px-Saigon_Buffalo.png" class="img-fluid" style="max-width: 40px; max-height: 40px;"/>
+                        </div>
+                      </div>
+      
+                      <div class="col-md-2">
+                        <a href="schedule.html"><h5 style="margin-top: 7px;" class="text-center"><i class="fas fa-caret-right"></i></h5></a>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="text-center mb-2" id="vods-lol">
+                  <div class="card text-center mb-2" style="padding: 10px 10px 10px 10px;">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                          <img src="https://am-a.akamaihd.net/image?resize=140:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2Ffastpay-wildcats.png" class="img-fluid" style="max-width: 40px; max-height: 40px;"/>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-4">
+                          <h5 style="margin-top: 5px;" class="text-center">vs</h5>
+                      </div>
+        
+                      <div class="col-md-3">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                          <img src="https://am-a.akamaihd.net/image?resize=140:&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1631819360134_rng-2021-worlds.png" class="img-fluid" style="max-width: 40px; max-height: 40px;"/>
+                        </div>
+                      </div>
+      
+                      <div class="col-md-2">
+                        <a href="schedule.html"><h5 style="margin-top: 7px;" class="text-center"><i class="fas fa-caret-right"></i></h5></a>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="tab-pane fade" id="ex3-tabs-2" role="tabpanel" aria-labelledby="ex3-tab-2">
+                <section class="text-center mb-4" id="vods-valorant">
+                  <div class="card text-center mb-2" style="padding: 10px 10px 10px 10px;">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                          <img src="img/team1.png" class="img-fluid" style="margin-top: 3px;"/>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-4">
+                          <h5 style="margin-top: 5px;" class="text-center">vs</h5>
+                      </div>
+        
+                      <div class="col-md-3">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                          <img src="img/team2.png" class="img-fluid" style="margin-top: 3px;"/>
+                        </div>
+                      </div>
+      
+                      <div class="col-md-2">
+                        <a href="schedule.html"><h5 style="margin-top: 7px;" class="text-center"><i class="fas fa-caret-right"></i></h5></a>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="text-center mb-4" id="vods-valorant">
+                  <div class="card text-center mb-2" style="padding: 10px 10px 10px 10px;">
+                    <div class="row">
+                      <div class="col-md-3">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                          <img src="img/team3.png" class="img-fluid" style="margin-top: 3px;"/>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-4">
+                          <h5 style="margin-top: 5px;" class="text-center">vs</h5>
+                      </div>
+        
+                      <div class="col-md-3">
+                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                          <img src="img/team4.png" class="img-fluid" style="margin-top: 3px;"/>
+                        </div>
+                      </div>
+      
+                      <div class="col-md-2">
+                        <a href="schedule.html"><h5 style="margin-top: 7px;" class="text-center"><i class="fas fa-caret-right"></i></h5></a>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-5" />
+        
+        <div class="row">
+          
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white">
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright: Esport.gg
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+    <div style="margin-bottom: -100px;">
+    </div>
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+  </body>
+</html>

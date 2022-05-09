@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Add Post</title>
+    <!-- MDB icon -->
+  <link rel="icon" href="img/logo_black.png" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <style>
+      .modal-backdrop.fade.show{
+        display:none;
+      }
+        .banner{
+            width: 100%;
+            height: 400px;
+            position: relative;
+            background: #e7e7e7;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .banner-upload-btn{
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .banner-upload-btn img{
+            width: 20px;
+        }
+
+        .blog{
+            width: 70vw;
+            min-width: 400px;
+            height: 100px;
+            display: block;
+            margin: auto;
+            padding: 50px 0;
+        }
+
+        textarea::-webkit-scrollbar{
+            width: 10px;
+        }
+
+        textarea::-webkit-scrollbar-thumb{
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .title,
+        .article{
+            width: 100%;
+            min-height: 100px;
+            height: auto;
+            outline: none;
+            font-size: 50px;
+            color: #2d2d2d;
+            resize: none;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .title::placeholder,
+        .article::placeholder{
+            color: #2d2d2d;
+        }
+
+        .article{
+            height: 500px;
+            font-size: 20px;
+            margin-top: 20px;
+            line-height: 30px;
+            font-weight: 500;
+            padding-bottom: 100px;
+            white-space: pre-wrap;
+        }
+
+        .blog-options{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: #fff;
+            z-index: 9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn{
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .btn.grey{
+            background: #a5a5a5;
+            color: #fff;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+    </style>
+  </head>
+  <body>
+    <!--Main Navigation-->
+    <header>
+      <!-- Intro settings -->
+      <style>
+        #intro {
+          /* Margin to fix overlapping fixed navbar */
+          margin-top: 58px;
+        }
+      </style>
+
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-black">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Navbar brand -->
+          <a class="navbar-brand" href="#">
+            <img src="img/logo.png" height="30" alt="" loading="lazy" />
+          </a>
+
+          <!-- Toggle button -->
+          <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="schedule.html">Schedule</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Watch</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="news.html">News</a>
+              </li>
+            </ul>
+            <!-- Left links -->
+
+            <!-- Search form -->
+            <form class="d-flex input-group w-auto">
+              <div class="input-group rounded">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <span class="input-group-text border-0" id="search-addon">
+                  <i class="fas fa-search"></i>
+                </span>
+              </div>
+            </form>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Login</a>
+                <span id="dpl-auth-modal"><div class="modal fade show" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" aria-hiden="true" role="dialog">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content" style="margin-top: 250px;">
+                      <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body mx-3">
+                        <div class="row">
+                          <div class="col-md-1">
+                            <i class="fas fa-envelope prefix grey-text" style="margin-top: 5px; font-size: 25px;"></i>
+                          </div>
+                          <div class="col-md">
+                            <div class="form-outline mb-4">
+                              <input type="email" id="form1Example1" class="form-control" />
+                              <label class="form-label" for="form1Example1">Email address</label>
+                              <div class="invalid-feedback">Please provide a valid email.</div>
+                            </div>
+                          </div>
+                        </div>
+      
+                        <div class="row">
+                          <div class="col-md-1">
+                            <i class="fas fa-lock prefix grey-text" style="margin-top: 6px; font-size: 25px;"></i>
+                          </div>
+                          <div class="col-md">
+                            <div class="form-outline mb-4">
+                              <input type="password" id="form1Example2" class="form-control" />
+                              <label class="form-label" for="form1Example2">Password</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Sign in</button>
+                      </div>
+                    </div>
+                  </div>
+                </div></span>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
+                  aria-expanded="false">
+                  <img src="img/admin.png" class="rounded-circle img-fluid"
+                    height='25' width='25'>
+                </a>
+                <!-- Dropdown menu -->
+                <ul class="dropdown-menu dropdown-menu-end p-1" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                  <li><a class="dropdown-item" href="#">Log Out</a></li>
+                </ul>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+      <!-- Navbar -->
+
+      <!-- Jumbotron -->
+      <div id="intro" class="p-5 text-center bg-light">
+        <h1 class="mb-0">Add Post</h1>
+      </div>
+      <!-- Jumbotron -->
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main class="mb-4">
+      <div class="container">
+        <div class="banner">
+            <input type="file" accept="image/*" id="banner-upload" hidden>
+            <label for="banner-upload" class="banner-upload-btn"><i class="fas fa-upload fa-2x"></i></label>
+        </div>
+        
+        <div class="blog">
+            <textarea type="text" class="title" placeholder="Post title..."></textarea>
+            <textarea type="text" class="article" style="font-weight: lighter;" placeholder="Start writing here..."></textarea>
+        </div>
+    
+        <div class="blog-options">
+            <button class="btn dark publish-btn">publish</button>
+            <input type="file" accept="image/*" id="image-upload" hidden>
+            <label for="image-upload" class="btn grey upload-btn">Upload Image</label>
+        </div>
+      </div>
+    </main>
+    <!--Main layout-->
+
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+
+    <script src="js/firebase.js"></script>
+    <script src="js/editor.js"></script>
+    <!-- MDB -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>
+  </body>
+</html>
