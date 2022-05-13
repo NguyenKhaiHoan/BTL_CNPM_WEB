@@ -37,112 +37,41 @@
       </style>
 
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-black">
-        <!-- Container wrapper -->
-        <div class="container-fluid">
-          <!-- Navbar brand -->
-          <a class="navbar-brand" href="#">
-            <img src="img/logo.png" height="30" alt="" loading="lazy" />
-          </a>
-
-          <!-- Toggle button -->
-          <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
+      <nav class="navbar navbar-expand-lg bg-black fixed-top navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="#"
+            ><img
+              id="MDB-logo"
+              src="img/logo.png"
+              alt="MDB Logo"
+              draggable="false"
+              height="30"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars" style="color: #444"></i>
           </button>
-
-          <!-- Collapsible wrapper -->
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left links -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link mx-2 text-white" href="index.html"><i class="fas fa-home pe-2"></i>Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="schedule.html">Schedule</a>
+                <a class="nav-link mx-2 text-white" href="matches.html"><i class="far fa-list-alt pe-2"></i>Shedule</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Watch</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="news.html">News</a>
+                <a class="nav-link mx-2 text-white" href="news_2.html"><i class="fas fa-newspaper pe-2"></i>News</a>
               </li>
             </ul>
-            <!-- Left links -->
-
-            <!-- Search form -->
-            <form class="d-flex input-group w-auto">
-              <div class="input-group rounded">
-                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                <span class="input-group-text border-0" id="search-addon">
-                  <i class="fas fa-search"></i>
-                </span>
-              </div>
-            </form>
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Login</a>
-                <span id="dpl-auth-modal"><div class="modal fade show" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" aria-hiden="true" role="dialog">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content" style="margin-top: 250px;">
-                      <div class="modal-header text-center">
-                        <h4 class="modal-title w-100 font-weight-bold">Sign in</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body mx-3">
-                        <div class="row">
-                          <div class="col-md-1">
-                            <i class="fas fa-envelope prefix grey-text" style="margin-top: 5px; font-size: 25px;"></i>
-                          </div>
-                          <div class="col-md">
-                            <div class="form-outline mb-4">
-                              <input type="email" id="form1Example1" class="form-control" />
-                              <label class="form-label" for="form1Example1">Email address</label>
-                              <div class="invalid-feedback">Please provide a valid email.</div>
-                            </div>
-                          </div>
-                        </div>
-      
-                        <div class="row">
-                          <div class="col-md-1">
-                            <i class="fas fa-lock prefix grey-text" style="margin-top: 6px; font-size: 25px;"></i>
-                          </div>
-                          <div class="col-md">
-                            <div class="form-outline mb-4">
-                              <input type="password" id="form1Example2" class="form-control" />
-                              <label class="form-label" for="form1Example2">Password</label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="modal-footer justify-content-center">
-                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Sign in</button>
-                      </div>
-                    </div>
-                  </div>
-                </div></span>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-mdb-toggle="dropdown"
-                  aria-expanded="false">
-                  <img src="img/admin.png" class="rounded-circle img-fluid"
-                    height='25' width='25'>
-                </a>
-                <!-- Dropdown menu -->
-                <ul class="dropdown-menu dropdown-menu-end p-1" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
-                  <li><a class="dropdown-item" href="#">Log Out</a></li>
-                </ul>
-              </li>
-            </ul>
-
           </div>
-          <!-- Collapsible wrapper -->
         </div>
-        <!-- Container wrapper -->
       </nav>
       <!-- Navbar -->
 
@@ -157,98 +86,293 @@
     <!--Main layout-->
     <main class="mb-4">
       <div class="container">
+        <div class="card row mb-4" style="margin-top: 5px; background-color: #d4d9df;">
+          <div class="d-flex">
+            <div class="p-2" style="font-weight: bold;">Valorant Regional League Spain: Rising - Stage 2</div>
+            <div class="ms-auto p-2">Thursday, May 12th</div>
+          </div>
+          <div class="d-flex mb-5" style="margin-top: -15px;">
+            <div class="p-2">Group Stage: Round 3</div>
+            <div class="ms-auto p-2">10:00 PM +07</div>
+          </div>
+          <div class="row mb-5" style="margin-top: 12px;">
+            <div class="text-center col-md-4">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="https://am-a.akamaihd.net/image?resize=150:150&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1644542427486_download37.png" class="img-fluid" style="max-width: 130px; max-height: 130px;"/>
+              </div>
+              <p>Team 1</p>
+            </div>
+            
+            <div class="col-md-4 d-flex align-items-center">                      
+              <h4 style="margin-left: auto; margin-right:auto;">
+                <div class="mb-2" style="font-size: 15px; font-weight: lighter; text-align: center;">
+                  FINAL
+                </div>
+                <div class="mb-2 badge bg-dark text-wrap">
+                  0:0
+                </div>
+                <div style="font-size: 15px; font-weight: lighter; text-align: center;">
+                  BO1
+                </div>
+              </h4>
+            </div>
+
+            <div class="text-center col-md-4">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="https://am-a.akamaihd.net/image?resize=150:150&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2Fsentinels.png" class="img-fluid" style="max-width: 130px; max-height: 130px;"/>
+              </div>
+              <p>Team 2</p>
+            </div>
+          </div>
+        </div>
+        <!-- Tabs navs -->
+        <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
+          <li class="nav-item" role="presentation">
+            <a
+              class="nav-link active"
+              id="ex1-tab-1"
+              data-mdb-toggle="tab"
+              href="#ex1-tabs-1"
+              role="tab"
+              aria-controls="ex1-tabs-1"
+              aria-selected="true"
+              ><i class="fas fa-chart-line"></i> Overview</a
+            >
+          </li>
+        </ul>
+        <!-- Tabs navs -->
+
         <!-- Tabs content -->
-        <div class="tab-content mb-3" id="ex1-content">
+        <div class="tab-content" id="ex1-content">
           <div
             class="tab-pane fade show active"
             id="ex1-tabs-1"
             role="tabpanel"
             aria-labelledby="ex1-tab-1"
           >
-            
-          </div>
-          <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-            
-          </div>
-          <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
-            
+            <div class="card row mb-4" style="margin-top: 5px;">
+              <div class="row mb-3">
+                <div class="col-md-4">
+                  <div class="d-flex flex-column justify-content-center align-items-start" style="margin-left: 22px">
+                    <p>Movistar Riders</p>
+                    <p style="margin-top: -15px">5/7/2</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="d-flex flex-column justify-content-center align-items-center">
+                    <h3>Bind</h3>
+                    <p style="margin-top: -10px">51:29</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class=" d-flex flex-column justify-content-center align-items-end">
+                    <p>KOI</p>
+                    <p style="margin-top: -15px">7/5/0</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row d-flex justify-content-center mb-3">
+                <table class="table table-borderless text-center" style="max-width: 400px;">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col"></th>
+                      <th scope="col">ACS</th>
+                      <th scope="col">K</th>
+                      <th scope="col">D</th>
+                      <th scope="col">A</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="text-start">Mickebwoy</th>
+                      <td><img class="align-items-center" src="https://www.vlr.gg/img/vlr/game/agents/sova.png" alt="" style="max-height:30px"></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        291
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        26
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        16
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        12
+                      </div></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="text-start">szimply</th>
+                      <td><img class="align-items-center" src="https://www.vlr.gg/img/vlr/game/agents/raze.png" alt="" style="max-height:30px"></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        228
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        19
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        20
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        5
+                      </div></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="text-start">KPZET</th>
+                      <td><img class="align-items-center" src="https://www.vlr.gg/img/vlr/game/agents/chamber.png" alt="" style="max-height:30px"></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        200
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        19
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        20
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        1
+                      </div></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="text-start">stanley</th>
+                      <td><img class="align-items-center" src="https://www.vlr.gg/img/vlr/game/agents/skye.png" alt="" style="max-height:30px"></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        165
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        14
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        19
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        7
+                      </div></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="text-start">Fizzy</th>
+                      <td><img class="align-items-center" src="https://www.vlr.gg/img/vlr/game/agents/brimstone.png" alt="" style="max-height:30px"></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        153
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        14
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        19
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        11
+                      </div></td>
+                    </tr>
+                  </tbody>
+                
+                </table>
+              </div>
+
+              <div class="row d-flex justify-content-center mb-3">
+                <table class="table table-borderless text-center" style="max-width: 400px;">
+                  <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col"></th>
+                      <th scope="col">ACS</th>
+                      <th scope="col">K</th>
+                      <th scope="col">D</th>
+                      <th scope="col">A</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="text-start">Mickebwoy</th>
+                      <td><img class="align-items-center" src="https://www.vlr.gg/img/vlr/game/agents/sova.png" alt="" style="max-height:30px"></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        291
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        26
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        16
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        12
+                      </div></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="text-start">szimply</th>
+                      <td><img class="align-items-center" src="https://www.vlr.gg/img/vlr/game/agents/raze.png" alt="" style="max-height:30px"></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        228
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        19
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        20
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        5
+                      </div></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="text-start">KPZET</th>
+                      <td><img class="align-items-center" src="https://www.vlr.gg/img/vlr/game/agents/chamber.png" alt="" style="max-height:30px"></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        200
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        19
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        20
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        1
+                      </div></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="text-start">stanley</th>
+                      <td><img class="align-items-center" src="https://www.vlr.gg/img/vlr/game/agents/skye.png" alt="" style="max-height:30px"></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        165
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        14
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        19
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        7
+                      </div></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="text-start">Fizzy</th>
+                      <td><img class="align-items-center" src="https://www.vlr.gg/img/vlr/game/agents/brimstone.png" alt="" style="max-height:30px"></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        153
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        14
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        19
+                      </div></td>
+                      <td><div class="badge text-wrap" style="background-color: #d4d9df; font-size: 13px">
+                        11
+                      </div></td>
+                    </tr>
+                  </tbody>
+                
+                </table>
+              </div>
+            </div>
           </div>
         </div>
         <!-- Tabs content -->
+        <div class="card">
 
-        <div class="card text-center" style="padding: 10px 10px 10px 10px;">
-          <div class="row mb-1">
-            <div class="row">
-              <div class="text-center col-md-4">
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img src="https://am-a.akamaihd.net/image?resize=150:150&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2F1644542427486_download37.png" class="img-fluid" style="margin-top: 3px;"/>
-                </div>
-                <p>Team 1</p>
-              </div>
-              
-              <div class="col-md-4">
-                  <h4 style="margin-top: 60px;" class="text-center">vs</h4>
-              </div>
-
-              <div class="text-center col-md-4">
-                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                  <img src="https://am-a.akamaihd.net/image?resize=150:150&f=http%3A%2F%2Fstatic.lolesports.com%2Fteams%2Fsentinels.png" class="img-fluid" style="margin-top: 3px;"/>
-                </div>
-                <p>Team 2</p>
-              </div>
-            </div>
-            <div class="row">
-              
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-2">
-              <p style="margin-top: 10px;"><i class="fas fa-caret-right"></i> Game</p>
-            </div>
-            <div class="col-md">
-              <!-- Tabs navs -->
-              <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <a
-                    class="nav-link active"
-                    id="ex1-tab-1"
-                    data-mdb-toggle="tab"
-                    href="#ex1-tabs-1"
-                    role="tab"
-                    aria-controls="ex1-tabs-1"
-                    aria-selected="true"
-                    >1</a
-                  >
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a
-                    class="nav-link"
-                    id="ex1-tab-2"
-                    data-mdb-toggle="tab"
-                    href="#ex1-tabs-2"
-                    role="tab"
-                    aria-controls="ex1-tabs-2"
-                    aria-selected="false"
-                    >2</a
-                  >
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a
-                    class="nav-link"
-                    id="ex1-tab-3"
-                    data-mdb-toggle="tab"
-                    href="#ex1-tabs-3"
-                    role="tab"
-                    aria-controls="ex1-tabs-3"
-                    aria-selected="false"
-                    >3</a
-                  >
-                </li>
-              </ul>
-              <!-- Tabs navs -->
-            </div>
-          </div>
         </div>
       </div>
     </main>
